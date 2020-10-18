@@ -12,7 +12,7 @@ class Source:
 
 class Article:
 
-    def __init__(self,author,title,description,url,urlToImage,publishedAt,content):
+    def __init__(self,author,title,description,url,urlToImage,publishedAt):
         self.author = author
         self.title = title
         self.description = description

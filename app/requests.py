@@ -45,5 +45,43 @@ def processSources(sourceLists):
 
     return sourcesResults
     
-def getArticles():
-    pass
+def getArticles(id):
+    get_article_url = article_url.format(id,api_key)
+
+
+    with urllib.request.urlopen(get_article_url) as url:
+        articleData = url.read()
+        articleResponse = json.loads(articleData)
+        # import pdb; pdb.set_trace()
+
+        articlesResults = None
+
+        if articleResponse['articles']:
+            articlesResultsList = articleResponse['articles']
+            articlesResults = processArticles(articlesResultsList)
+            
+
+    return articlesResults
+
+
+
+def processArticles(articlesList):
+
+    articlesResults = []
+    for articleResponse in articlesList:
+        author = articleResponse.get('author')
+        title = articleResponse.get('title')
+        description = articleResponse.get('description')
+        urlToImage = articleResponse.get('urlToImage')
+        url = articleResponse.get('url')
+        publishedAt = articleResponse.get('publishedAt')
+
+        article_object = Article(author,title,description,url,urlToImage,publishedAt)
+
+        articlesResults.append(article_object)
+
+
+    return articlesResults
+    
+
+

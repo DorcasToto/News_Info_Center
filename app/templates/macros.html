@@ -4,8 +4,8 @@
     <ul>
         <li>{{ news.name}}</li>
         <p>{{ news.description}}</p>
-        <a>{{news.url}}</a>
+        <a href="/sources/{{news.id}}">
+            {{ news.url}}</a>
     </ul>
-
     {% endfor %}
 {% endmacro %}
