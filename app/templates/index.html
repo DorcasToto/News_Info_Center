@@ -1,18 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
 
-    <h3>Business</h3>
-    <ul>
-        {% for business_news in business%}
-        <li>{{business_news.name}}</li>
-        {%endfor%}
-    </ul>
-    
-</body>
-</html>
+{% block content %}
+<h3>Business</h3>
+<ul>
+   {{ macro.displayNewsList(business)}}
+</ul>
+<h3>Sports</h3>
+<ul>
+   {{ macro.displayNewsList(sports)}}
+</ul>
+<h3>Entertainment</h3>
+<ul>
+   {{ macro.displayNewsList(entertainment)}}
+</ul>
+<h3>health</h3>
+<ul>
+   {{ macro.displayNewsList(health)}}
+</ul>
+<h3>Technology</h3>
+<ul>
+   {{ macro.displayNewsList(technology)}}
+</ul>
+
+{% endblock %}
