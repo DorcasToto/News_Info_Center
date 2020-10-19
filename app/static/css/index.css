@@ -6,13 +6,14 @@
     font-family: 'Merienda', cursive;
     overflow-x: hidden;
 }
-h3{
-    font-size: 40px;
-    font-family: "Charm", cursive;
-}
+
 .tech{
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+}
+h2{
+    font-size: 40px;
+    font-family: "Charm", cursive;
 }
