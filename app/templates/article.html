@@ -1,6 +1,7 @@
 {% extends 'base.html'%}
 <!-- Content block -->
 {% block content %}
+<h3 class="text-center`">{{title}}</h3>
 {% for article in article %}
 {% block styles%}
     {{ super() }}
@@ -26,6 +27,7 @@
         <div class="col-md-6 mt-5">
             <div class="card" style="width:70rem;">
                 <div class="card-body">
+                  <p class="card-text h4">{{ article.title }}</p>
                   <p class="card-text">{{ article.description }}</p>
                   <p>{{article.publishedAt}}</p>
                   <a href="{{article.url}}" class="btn btn-primary">Continue Reading?</a>
