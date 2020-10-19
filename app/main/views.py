@@ -8,7 +8,7 @@ def index():
 
     business = getSources('business')
     entertainment = getSources('entertainment')
-    general = getSources('general')
+    # general = getSources('general')
     health  = getSources('health')
     science = getSources('science')
     sports = getSources('sports')
@@ -17,11 +17,11 @@ def index():
 
     title = 'Home, Welcome to the best News Center'
 
-    return render_template('index.html',title = title, business = business,entertainment = entertainment, general = general, health = health,science = science, sports = sports,technology = technology)
+    return render_template('index.html',title = title, business = business,entertainment = entertainment,health = health,science = science, sports = sports,technology = technology)
 
 @main.route('/sources/<id>')
 def article(id):
     article = getArticles(id)
-    title = 'Article'
+    title = f'{id}'
     
     return render_template('article.html',article = article,title = title)
