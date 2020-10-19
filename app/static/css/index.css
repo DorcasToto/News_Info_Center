@@ -5,13 +5,15 @@
     font-family: "Charm", cursive;
   }
 
-.tech{
+/* .tech{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
-}
+    border: 2em solid black;
+} */
 h3{
     font-weight: 700;
     font-size:30px;
+   
 }
